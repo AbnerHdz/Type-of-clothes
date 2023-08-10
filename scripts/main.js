@@ -1,10 +1,27 @@
 alert("In this exercise, you will be asked 5 multiple-choice questions, and upon answering all of them, we will display the type of clothing we would recommend you to wear.")
 
-var gender = prompt("What is your gender, Girl or Boy?");
-var name = prompt("What is your Name?");
-var age = prompt("Are you a Child, Teenager or Adult?");
-var weather = prompt("What type of weather do you prefer, Hot or Cold?")
-var color = prompt("What color you prefer? Red, Blue or Green?");
+var gender = prompt("What is your gender, Girl or Boy?").toLocaleLowerCase();
+if (gender !== "girl" && gender !== "boy"){
+    alert("Please select Girl or Boy");
+    throw new Error("Invalid answer");
+}
+var name = prompt("What is your Name?").toUpperCase();
+
+var age = prompt("Are you a Child, Teenager or Adult?").toLocaleLowerCase();
+if (age !== "child" && age !== "teenager" && age !== "adult"){
+    alert("Please choose between Child, Teenager or Adult");
+    throw new Error("Invalid answer");
+}
+var weather = prompt("What type of weather do you prefer, Hot or Cold?").toLocaleLowerCase()
+if (weather !== "hot" && weather !== "cold"){
+    alert("Please choose between Hot or Cold");
+    throw new Error("Invalid answer");
+}
+var color = prompt("What color you prefer? Red, Blue or Green?").toLocaleLowerCase();
+if (color !== "red" && color !== "blue" && color !== "green"){
+    alert("Please choose between Red, Blue or Green");
+    throw new Error("Invalid answer");
+}
 
 
 //Se muestra en consola//
@@ -90,7 +107,7 @@ if ((gender == "Girl" || gender =="girl") && (weather == "Cold" || weather == "c
     console.log("This is the outfit recommendation for you")
     document.write("THIS IS THE OUTFIT RECOMMENDATION FOR YOU 🤩: ")
     document.write("<img src='images/img17.jpeg' width='200' height='200'>")
-}else if ((gender == "Girl" || gender =="girl") && (weather == "Hot" || weather == "hot") && (age == "Teenager" || age =="teenager") && (color == "Green" || color == "green")){
+}else if ((gender == "Girl" || gender =="girl") && (weather == "Hot" || weather == "hot") && (age == "Adult" || age =="adult") && (color == "Green" || color == "green")){
     console.log("This is the outfit recommendation for you")
     document.write("THIS IS THE OUTFIT RECOMMENDATION FOR YOU 🤩: ")
     document.write("<img src='images/img18.jpeg' width='200' height='200'>")
